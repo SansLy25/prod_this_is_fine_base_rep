@@ -1,0 +1,21 @@
+stages:
+  - flake8
+  - tests
+
+flake8-check:
+  stage: flake8
+  image: python:3.9
+  before_script:
+    - pip install -r requirements.txt
+  script:
+    - flake8 .
+
+django_tests:
+  stage: url_tests
+  image: python:3.9
+  before_script:
+    - pip install --upgrade pip
+    - pip install -r requirements.txt
+  script:
+    - cd src
+    - python3 manage.py test
