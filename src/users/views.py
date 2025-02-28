@@ -8,6 +8,7 @@ from rest_framework_simplejwt.tokens import RefreshToken
 
 from users.serializers import UserRegistrationSerializer
 
+
 class UserRegistrationView(CreateAPIView):
     permission_classes = [AllowAny]
     authentication_classes = []
@@ -27,9 +28,8 @@ class UserRegistrationView(CreateAPIView):
 
         response_data = {
             **serializer.data,
-            'refresh': str(refresh_token),
-            'access': access_token,
+            "refresh": str(refresh_token),
+            "access": access_token,
         }
 
         return Response(response_data, status=status.HTTP_201_CREATED)
-
