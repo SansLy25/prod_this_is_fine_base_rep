@@ -11,7 +11,7 @@ variables:
 before_script:
   - apt-get update -qq && apt-get install -y -qq postgresql-client
   - python -m pip install --upgrade pip
-  - pip install -r requirements.tx
+  - pip install -r requirements.txt
 
 stages:
   - flake8
