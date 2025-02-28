@@ -19,13 +19,13 @@ stages:
 
 flake8-check:
   stage: flake8
-  image: python:3.9
+  image: python:3.13
   script:
     - flake8 .
 
 django_tests:
   stage: tests
-  image: python:3.9
+  image: python:3.13
   script:
     - cd src
     - python3 manage.py test
